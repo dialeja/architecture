@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { YesOrNoService } from './yes-or-no.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+body;
+  constructor(private yesOrNo:YesOrNoService){
+    this.body=this.yesOrNo.getAnswer();
+
+  }
 }
